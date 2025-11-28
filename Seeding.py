@@ -5,15 +5,14 @@ import time
 import csv
 
 # Constants for the API and Discord
-NEATQUEUE_URL = 'https://api.neatqueue.com/api'
-BMM_SERVER_ID = '1226193436521267223'
-RANKED_CHANNEL = '1352157545547960350'
+API_URL = 'https://balatro.virtualized.dev:4931/api/'
+QUEUE_ID = '1'
 DEFAULT_MMR = 200  # Default MMR for players not found in the API
 
 
 # Function to fetch leaderboard data from NEATQueue API
 def fetch_data():
-    url = f"{NEATQUEUE_URL}/leaderboard/{BMM_SERVER_ID}/{RANKED_CHANNEL}"
+    url = f"{NEATQUEUE_URL}/stats/leaderboard/{QUEUE_ID}"
     try:
         response = requests.get(url)
         response.raise_for_status()
